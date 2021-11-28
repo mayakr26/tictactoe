@@ -1,10 +1,10 @@
-package com.company;
+package com.kroeger;
 
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class TicTacToe {
 
     Scanner scanner = new Scanner(System.in);
     Random random = new Random();
@@ -18,7 +18,7 @@ public class Main {
     private final int[] field = new int[9];
 
     public static void main(String[] args) {
-        new Main().play();
+        new TicTacToe().play();
     }
 
     public boolean setSymbol(int symbol, int index) {

@@ -11,7 +11,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - run: javac -classpath . src/com/kroeger/TicTacToe.java
+      - run: |
+          cd src
+          javac -classpath . com/kroeger/TicTacToe.java
+          jar cfm TicTacToe.jar manifest.mf com/kroeger/TicTacToe.class
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
@@ -24,3 +27,4 @@ jobs:
           from: Maya Alina Kröger
           secure: true
           body: Build job of TicTacToe completed successfully!
+          attachments: src/TicTacToe.jar

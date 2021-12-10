@@ -21,6 +21,6 @@ jobs:
           password: ${{secrets.MAIL_PASSWORD}}
           subject: TicTacToe was builded
           to: maya.alina.kroeger@stud.th-luebeck.de
-          from: Maya Kröger
+          from: Maya Alina Kröger
           secure: true
           body: Build job of TicTacToe completed successfully!

@@ -12,3 +12,16 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - run: javac -classpath . src/com/kroeger/TicTacToe.java
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: TicTacToe was builded
+          to: maya.alina.kroeger@stud.th-luebeck.de
+          from: Maya Kröger
+          secure: true
+          body: Build job of TicTacToe completed successfully!
+          html_body: file://README.html

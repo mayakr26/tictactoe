@@ -1,0 +1,14 @@
+name: TicTacToe build app
+
+on: [push]
+
+jobs:
+  ubuntu-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - run: javac -classpath . src/com/kroeger/TicTacToe.java

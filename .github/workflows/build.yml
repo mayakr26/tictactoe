@@ -15,7 +15,12 @@ jobs:
           cd src
           javac -classpath . com/kroeger/TicTacToe.java
           jar cfm TicTacToe.jar manifest.mf com/kroeger/TicTacToe.class
-          zip TicTacToe.zip TicTacToe.jar
+      - name: release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "TicTacToe.jar"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:

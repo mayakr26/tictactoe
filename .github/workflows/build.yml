@@ -1,6 +1,9 @@
 name: TicTacToe build app
 
-on: [push]
+on:
+  push:
+    tags:
+      - '*'
 
 jobs:
   ubuntu-build:

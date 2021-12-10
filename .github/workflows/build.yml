@@ -27,5 +27,4 @@ jobs:
           to: maya.alina.kroeger@stud.th-luebeck.de
           from: Maya Alina Kröger
           secure: true
-          body: Build job of TicTacToe completed successfully!
-          attachments: src/TicTacToe.zip
+          body: Build job of TicTacToe completed successfully! TicTacToe is compiled!

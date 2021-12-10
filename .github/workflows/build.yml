@@ -15,16 +15,16 @@ jobs:
           cd src
           javac -classpath . com/kroeger/TicTacToe.java
           jar cfm TicTacToe.jar manifest.mf com/kroeger/TicTacToe.class
-      - name: release
-        uses: actions/create-release@v1
-        id: create_release
-        with:
-          draft: false
-          prerelease: false
-          release_name: ${{ steps.version.outputs.version }}
-          tag_name: ${{ github.ref }}
+          zip TicTacToe.zip TicTacToe.jar
+      - name: upload windows artifact
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./TicTacToe.zip
+          asset_name: TicTacToe.zip
+          asset_content_type: application/zip
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:

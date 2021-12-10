@@ -24,4 +24,3 @@ jobs:
           from: Maya Kröger
           secure: true
           body: Build job of TicTacToe completed successfully!
-          html_body: file://README.html

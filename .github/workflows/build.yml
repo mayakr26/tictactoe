@@ -15,6 +15,7 @@ jobs:
           cd src
           javac -classpath . com/kroeger/TicTacToe.java
           jar cfm TicTacToe.jar manifest.mf com/kroeger/TicTacToe.class
+          zip TicTacToe.zip TicTacToe.jar
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
@@ -27,4 +28,4 @@ jobs:
           from: Maya Alina Kröger
           secure: true
           body: Build job of TicTacToe completed successfully!
-          attachments: src/TicTacToe.jar
+          attachments: src/TicTacToe.zip
